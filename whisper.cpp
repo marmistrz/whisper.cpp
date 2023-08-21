@@ -4963,6 +4963,11 @@ float whisper_full_get_token_p(struct whisper_context * ctx, int i_segment, int 
     return ctx->state->result_all[i_segment].tokens[i_token].p;
 }
 
+/// Clears the accumulated text context so far.
+void whisper_clear_context(struct whisper_state * state) {
+    state->prompt_past.clear();
+}
+
 // =================================================================================================
 
 //
